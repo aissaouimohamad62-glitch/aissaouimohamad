@@ -64,16 +64,32 @@
 
         /* --- Hero Section --- */
         .hero { padding: 60px 0; text-align: center; }
-        
-        .profile-img {
-            width: 180px; height: 180px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid var(--primary);
-            margin-bottom: 20px;
-            animation: float 4s ease-in-out infinite;
-            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
-        }
+                /* تنسيق الصورة للهواتف (الافتراضي) */
+.profile-img {
+    width: 150px; /* حجم أصغر للهواتف */
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--primary);
+    margin-bottom: 20px;
+    animation: float 4s ease-in-out infinite;
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+    transition: var(--transition);
+}
+
+/* تنسيق خاص للآيباد والشاشات الأكبر (Tablet) */
+@media (min-width: 768px) {
+    .profile-img {
+        width: 220px; /* حجم أكبر قليلاً للآيباد */
+        height: 220px;
+        border: 6px solid var(--primary);
+    }
+}
+
+/* لضمان عدم خروج الصورة عن إطار الشاشة في الهواتف الصغيرة جداً */
+img {
+    max-width: 100%;
+    height: auto;
 
         .promo-badge {
             background: var(--secondary);
